@@ -1,3 +1,5 @@
+
+
 import { useState } from "react";
 import "./styles.css";
 import { words, randomWord } from "./words";
