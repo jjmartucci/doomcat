@@ -1,0 +1,18 @@
+.App {
+  background: #ff073a;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+}
+
+.BigButton {
+  margin: 0 auto;
+  font-size: 3rem;
+  display: block;
+  background: #00022e;
+  border: 1px solid #02066f;
+  color: white;
+  padding: 1rem;
+  border-radius: 0.25rem;
+}

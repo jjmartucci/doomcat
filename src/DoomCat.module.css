@@ -1,0 +1,50 @@
+@keyframes fancy-spin {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  15% {
+    transform: rotate(0deg) scale(1.2);
+  }
+  30% {
+    transform: rotate(20deg) scale(1.2);
+  }
+  45% {
+    transform: rotate(-20deg) scale(1.2);
+  }
+  60% {
+    transform: rotate(20deg) scale(1.2);
+  }
+  75% {
+    transform: rotate(-20deg) scale(1.2);
+  }
+  100% {
+    transform: rotate(0deg) scale(1);
+  }
+}
+
+.DoomCat__RightEye,
+.DoomCat__Nose,
+.DoomCat__RightWhiskers,
+.DoomCat__Outline,
+.DoomCat__LeftEye,
+.DoomCat__LeftWhiskers,
+.DoomCat__Color {
+  opacity: 0;
+  transition: 500ms ease-in-out;
+}
+
+.DoomCat__RightEye[data-doomed="true"],
+.DoomCat__Nose[data-doomed="true"],
+.DoomCat__RightWhiskers[data-doomed="true"],
+.DoomCat__Outline[data-doomed="true"],
+.DoomCat__LeftEye[data-doomed="true"],
+.DoomCat__LeftWhiskers[data-doomed="true"],
+.DoomCat__Color[data-doomed="true"] {
+  opacity: 1;
+}
+
+.DoomCat[data-doomed="true"] {
+  animation: fancy-spin 3000ms;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}

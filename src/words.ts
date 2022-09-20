@@ -1,0 +1,38 @@
+export const randomWord = (words: Array<string>) => {
+  return words[Math.floor(Math.random() * words.length)];
+};
+export const words = [
+  "test",
+  "cat",
+  "cool",
+  "table",
+  "chair",
+  "alphabet",
+  "doorway",
+  "children",
+  "whale",
+  "giraffe",
+  "taco",
+  "racecar",
+  "banana",
+  "school",
+  "gym",
+  "baseball",
+  "soccer",
+  "basketball",
+  "chalk",
+  "ruler",
+  "pencil",
+  "eraser",
+  "sneakers",
+  "toboggan",
+  "mathematics",
+  "reading",
+  "books",
+  "library",
+  "recess",
+  "playground",
+  "bicycle",
+  "duck",
+  "monkey"
+];
