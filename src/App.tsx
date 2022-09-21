@@ -48,13 +48,21 @@ export default function App() {
   };
 
   const renderWord = () => {
-    const letters = word.split("").map((character) => {
-      if (selected.includes(character)) {
+    let letters;
+    if (wrongGuesses >= limit) {
+      letters = word.split("").map((character) => {
         return <div className="word__letter">{character}</div>;
-      } else {
-        return <div className="word__letter word__letter--empty"></div>;
-      }
-    });
+      });
+    } else {
+      letters = word.split("").map((character) => {
+        if (selected.includes(character)) {
+          return <div className="word__letter">{character}</div>;
+        } else {
+          return <div className="word__letter word__letter--empty"></div>;
+        }
+      });
+    }
+
     return <div className="word">{letters}</div>;
   };
 

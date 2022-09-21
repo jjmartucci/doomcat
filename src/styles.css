@@ -1,3 +1,7 @@
+body {
+  margin: 0;
+}
+
 .App {
   font-family: sans-serif;
   text-align: center;
@@ -49,14 +53,15 @@ button[data-selected="true"] {
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: center;
-  margin: 0 auto;
+  margin: 0 auto 3rem;
   padding: 0;
-  width: 80%;
+  width: calc(100vw - 2rem);
+  max-width: clamp(300px, 70vw, 1000px);
 }
 
 .doomcat {
   width: 50%;
-  height: 400px;
+  height: clamp(390px, 40vh, 600px);
   margin: 0 auto;
   display: flex;
   align-items: center;
