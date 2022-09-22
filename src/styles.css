@@ -28,12 +28,6 @@ li {
   justify-content: center;
 }
 
-@media screen and (min-width: 600px) {
-  .alphabet__button {
-    font-size: 2rem;
-    width: 2.4rem;
-  }
-}
 
 button[data-selected="true"] {
   background: #02066f;
@@ -64,7 +58,7 @@ button[data-selected="true"] {
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: center;
-  margin: 0 auto 3rem;
+  margin: 0 auto 1.4rem;
   padding: 0;
   width: calc(100vw - 2rem);
   max-width: 600px;
@@ -81,4 +75,14 @@ button[data-selected="true"] {
 
 #one {
   display: none;
+}
+
+@media screen and (min-width: 600px) {
+  .alphabet__button {
+    font-size: 2rem;
+    width: 2.4rem;
+  }
+  .buttons {
+    margin: 0 auto 3rem;
+  }
 }
