@@ -7,11 +7,17 @@
 
 .BigButton {
   margin: 0 auto;
-  font-size: 3rem;
+  font-size: 2rem;
   display: block;
   background: #00022e;
   border: 1px solid #02066f;
   color: white;
   padding: 1rem;
   border-radius: 0.25rem;
+}
+
+@media screen and (min-width: 600px) {
+  .BigButton {
+    font-size: 3rem;
+  }
 }
