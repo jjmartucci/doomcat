@@ -1,5 +1,7 @@
 body {
   margin: 0;
+  background: #ff073a;
+
 }
 
 .App {
@@ -56,12 +58,12 @@ button[data-selected="true"] {
   margin: 0 auto 3rem;
   padding: 0;
   width: calc(100vw - 2rem);
-  max-width: clamp(300px, 70vw, 1000px);
+  max-width: 600px;
 }
 
 .doomcat {
   width: 50%;
-  height: clamp(390px, 40vh, 600px);
+  height: clamp(290px, 40vh, 600px);
   margin: 0 auto;
   display: flex;
   align-items: center;
