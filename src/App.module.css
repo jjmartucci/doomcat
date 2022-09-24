@@ -21,3 +21,8 @@
     font-size: 3rem;
   }
 }
+
+pre {
+  width: 100%;
+  word-break: break-word;
+}

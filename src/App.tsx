@@ -1,19 +1,19 @@
-
-
 import { useState } from "react";
 import "./styles.css";
-import { words, randomWord } from "./words";
+import { easyWords, hardWords, randomWord } from "./words";
 import { DoomCat } from "./DoomCat";
 import { HappyCat } from "./HappyCat";
-
+import { Difficulty } from "./components/Difficulty/Difficulty";
 import styles from "./App.module.css";
 
 export default function App() {
   const alphabet = [];
+  const [wordSet, setWordSet] = useState<Array<string>>([]);
   const [selected, setSelected] = useState<Array<string>>([]);
-  const [word, setWord] = useState(randomWord(words));
+  const [word, setWord] = useState("");
   const [wrongGuesses, setWrongGuesses] = useState(0);
   const [won, setWon] = useState(false);
+  const [difficulty, setDifficulty] = useState("");
   const limit = 7;
 
   for (let i = 0; i < 26; i++) {
@@ -44,7 +44,19 @@ export default function App() {
     setWrongGuesses(0);
     setWon(false);
     setSelected([]);
-    setWord(randomWord(words));
+    setWord(randomWord(wordSet));
+  };
+
+  const setDifficultyLevel = (level: string) => {
+    if (level === "easy") {
+      setDifficulty("easy");
+      setWordSet(easyWords);
+      setWord(randomWord(easyWords));
+    } else {
+      setDifficulty("hard");
+      setWordSet(hardWords);
+      setWord(randomWord(hardWords));
+    }
   };
 
   const renderWord = () => {
@@ -73,21 +85,24 @@ export default function App() {
         {!won && <DoomCat doomed={wrongGuesses} />}
       </div>
 
-      {renderWord()}
+      {difficulty && renderWord()}
 
-      <ul className="buttons">
-        {alphabet.map((char) => (
-          <li>
-            <button
-              data-selected={selected.includes(char)}
-              onClick={() => characterSelected(char)}
-              className="alphabet__button"
-            >
-              {char}
-            </button>
-          </li>
-        ))}
-      </ul>
+      {!difficulty && <Difficulty setDifficulty={setDifficultyLevel} />}
+      {difficulty && (
+        <ul className="buttons">
+          {alphabet.map((char) => (
+            <li>
+              <button
+                data-selected={selected.includes(char)}
+                onClick={() => characterSelected(char)}
+                className="alphabet__button"
+              >
+                {char}
+              </button>
+            </li>
+          ))}
+        </ul>
+      )}
       {wrongGuesses >= limit && (
         <button className={styles.BigButton} onClick={reset}>
           Try again!
