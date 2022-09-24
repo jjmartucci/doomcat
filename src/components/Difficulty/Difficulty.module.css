@@ -1,9 +1,9 @@
 .Difficulty {
   display: flex;
   margin: 0 auto;
-  width: 50%;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .Difficulty__Button {
@@ -11,6 +11,7 @@
   border: 0;
   border-radius: 0.25rem;
   background: white;
+  height: 3rem;
 }
 
 .Difficulty__Button + .Difficulty__Button {
